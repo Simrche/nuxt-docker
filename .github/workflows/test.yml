@@ -13,3 +13,6 @@ jobs:
       - run: yarn
       - run: yarn test
       - run: docker ps
+      - run: docker build . -t nuxt-docker
+      - run: docker tag nuxt-docker ghcr.io/simrche/nuxt-docker:1.0.0
+      - run: docker push ghcr.io/simrche/nuxt-docker:1.0.0
