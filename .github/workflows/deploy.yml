@@ -1,9 +1,9 @@
-name: test
+name: build
 on: [ push ]
 jobs:
 
   build:
-    name: Test
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,4 +20,4 @@ jobs:
           registry: ghcr.io
           username: ${{ secrets.ACTOR }}
           password: ${{ secrets.TOKEN }}
-      - run: docker push ghcr.io/simrche/nuxt-docker:1.0.0 
+      - run: docker push ghcr.io/simrche/nuxt-docker:1.0.0
