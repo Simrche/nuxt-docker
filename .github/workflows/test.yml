@@ -15,9 +15,9 @@ jobs:
       - run: docker ps
       - run: docker build . -t nuxt-docker
       - run: docker tag nuxt-docker ghcr.io/simrche/nuxt-docker:1.0.0
-      - name: Login to GitHub Container Registry
+      name: Login to GitHub Container Registry
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: simrche
           password: ${{ secrets.GITHUB_TOKEN }}
